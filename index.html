@@ -81,7 +81,7 @@
 <span class="pl-sr">                <span class="pl-pds">/</span><span class="pl-c1">.</span><span class="pl-k">*</span><span class="pl-cce">\.</span>min<span class="pl-c1">.</span><span class="pl-k">*</span><span class="pl-pds">/</span></span>
             ]
         }),
-        <span class="pl-k">new</span> <span class="pl-en">ExtractTextPlugin</span>(path.<span class="pl-s3">join</span>(<span class="pl-s1"><span class="pl-pds">'</span>[name].css<span class="pl-pds">'</span></span>)),
+        <span class="pl-k">new</span> <span class="pl-en">ExtractTextPlugin</span>(<span class="pl-s1"><span class="pl-pds">'</span>[name].css<span class="pl-pds">'</span></span>),
         <span class="pl-k">new</span> <span class="pl-en">webpack.optimize</span>.CommonsChunkPlugin(<span class="pl-s1"><span class="pl-pds">'</span>vendor<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>vendor.js<span class="pl-pds">'</span></span>)
     ],
     module<span class="pl-k">:</span> {
