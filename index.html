@@ -28,9 +28,7 @@
         </ul>
       </header>
       <section>
-        
-
-<p><a href="https://www.npmjs.org/package/webpack-config"><img src="http://img.shields.io/npm/v/webpack-config.svg?style=flat" alt="NPM version"></a> <a href="https://david-dm.org/mdreizin/webpack-config"><img src="https://david-dm.org/mdreizin/webpack-config.svg?style=flat" alt="Dependency Status"></a> <a href="https://david-dm.org/mdreizin/webpack-config#info=devDependencies"><img src="https://david-dm.org/mdreizin/webpack-config/dev-status.svg?style=flat" alt="Dependency Status"></a></p>
+        <p><a href="https://www.npmjs.org/package/webpack-config"><img src="http://img.shields.io/npm/v/webpack-config.svg?style=flat" alt="NPM version"></a> <a href="https://david-dm.org/mdreizin/webpack-config"><img src="https://david-dm.org/mdreizin/webpack-config.svg?style=flat" alt="Dependency Status"></a> <a href="https://david-dm.org/mdreizin/webpack-config#info=devDependencies"><img src="https://david-dm.org/mdreizin/webpack-config/dev-status.svg?style=flat" alt="Dependency Status"></a></p>
 
 <p><a href="https://nodei.co/npm/webpack-config/"><img src="https://nodei.co/npm/webpack-config.png?downloads=true&amp;stars=true" alt="NPM"></a></p>
 
@@ -59,7 +57,7 @@
     ComponentPlugin <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>component-webpack-plugin<span class="pl-pds">'</span></span>),
     WebpackConfig <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
 
-<span class="pl-sv">module</span>.exports <span class="pl-k">=</span> WebpackConfig.from({
+<span class="pl-sv">module</span>.exports <span class="pl-k">=</span> WebpackConfig.fromObject({
     output<span class="pl-k">:</span> {
         filename<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>[name].js<span class="pl-pds">'</span></span>
     },
@@ -124,7 +122,7 @@
 
 <span class="pl-s">var</span> WebpackConfig <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
 
-<span class="pl-sv">module</span>.exports <span class="pl-k">=</span> WebpackConfig.<span class="pl-s3">load</span>().extend({
+<span class="pl-sv">module</span>.exports <span class="pl-k">=</span> WebpackConfig.fromCwd().extend({
     entry<span class="pl-k">:</span> {
         vendor<span class="pl-k">:</span> [
             <span class="pl-s1"><span class="pl-pds">'</span>consolelog<span class="pl-pds">'</span></span>,
