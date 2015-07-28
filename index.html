@@ -6,7 +6,7 @@
     <title>webpack-config by mdreizin</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -28,13 +28,10 @@
         </ul>
       </header>
       <section>
-        <p><a href="https://www.npmjs.org/package/webpack-config"><img src="http://img.shields.io/npm/v/webpack-config.svg?style=flat" alt="NPM version"></a> <a href="https://travis-ci.org/mdreizin/webpack-config"><img src="http://img.shields.io/travis/mdreizin/webpack-config/master.svg?style=flat" alt="Travis build status"></a> <a href="https://david-dm.org/mdreizin/webpack-config"><img src="https://david-dm.org/mdreizin/webpack-config.svg?style=flat" alt="Dependency Status"></a> <a href="https://david-dm.org/mdreizin/webpack-config#info=devDependencies"><img src="https://david-dm.org/mdreizin/webpack-config/dev-status.svg?style=flat" alt="Dependency Status"></a></p>
-
-<p><a href="https://nodei.co/npm/webpack-config/"><img src="https://nodei.co/npm/webpack-config.png?downloads=true&amp;stars=true" alt="NPM"></a></p>
+        <p><a href="https://www.npmjs.org/package/webpack-config"><img src="http://img.shields.io/npm/v/webpack-config.svg?style=flat" alt="NPM version"></a> <a href="https://travis-ci.org/mdreizin/webpack-config"><img src="http://img.shields.io/travis/mdreizin/webpack-config/master.svg?style=flat" alt="Travis build status"></a> <a href="https://codeclimate.com/github/mdreizin/webpack-config"><img src="https://codeclimate.com/github/mdreizin/webpack-config/badges/gpa.svg" alt="Code Climate"></a> <a href="https://codeclimate.com/github/mdreizin/webpack-config"><img src="https://codeclimate.com/github/mdreizin/webpack-config/badges/coverage.svg" alt="Code Climate"></a> <a href="https://david-dm.org/mdreizin/webpack-config"><img src="https://david-dm.org/mdreizin/webpack-config.svg?style=flat" alt="Dependency Status"></a> <a href="https://david-dm.org/mdreizin/webpack-config#info=devDependencies"><img src="https://david-dm.org/mdreizin/webpack-config/dev-status.svg?style=flat" alt="Dependency Status"></a></p>
 
 <h1>
-<a id="webpack-config" class="anchor" href="#webpack-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>
-<a href="https://github.com/webpack/webpack">webpack</a>-config</h1>
+<a id="webpack-config" class="anchor" href="#webpack-config" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/webpack/webpack">webpack</a>-config</h1>
 
 <p>Helps to load, extend and merge webpack configs</p>
 
@@ -48,28 +45,28 @@
 
 <p><code>webpack.config.js</code></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s1"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
 
-<span class="pl-s">var</span> path <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>path<span class="pl-pds">'</span></span>),
-    webpack <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>webpack<span class="pl-pds">'</span></span>),
-    BowerPlugin <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>bower-webpack-plugin<span class="pl-pds">'</span></span>),
-    ExtractTextPlugin <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>extract-text-webpack-plugin<span class="pl-pds">'</span></span>),
-    ComponentPlugin <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>component-webpack-plugin<span class="pl-pds">'</span></span>),
-    WebpackConfig <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> path <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>path<span class="pl-pds">'</span></span>),
+    webpack <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack<span class="pl-pds">'</span></span>),
+    BowerPlugin <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>bower-webpack-plugin<span class="pl-pds">'</span></span>),
+    ExtractTextPlugin <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>extract-text-webpack-plugin<span class="pl-pds">'</span></span>),
+    ComponentPlugin <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>component-webpack-plugin<span class="pl-pds">'</span></span>),
+    webpackConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
 
-<span class="pl-sv">module</span>.exports <span class="pl-k">=</span> WebpackConfig.fromObject({
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> webpackConfig.fromObject({
     output<span class="pl-k">:</span> {
-        filename<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>[name].js<span class="pl-pds">'</span></span>
+        filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>[name].js<span class="pl-pds">'</span></span>
     },
     resolve<span class="pl-k">:</span> {
         root<span class="pl-k">:</span> [
-            <span class="pl-sv">__dirname</span>,
-            path.<span class="pl-s3">join</span>(<span class="pl-sv">__dirname</span>, <span class="pl-s1"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>main<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>assets<span class="pl-pds">'</span></span>)
+            <span class="pl-c1">__dirname</span>,
+            path.<span class="pl-c1">join</span>(<span class="pl-c1">__dirname</span>, <span class="pl-s"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>main<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>assets<span class="pl-pds">'</span></span>)
         ],
         modulesDirectories<span class="pl-k">:</span> [
-            <span class="pl-s1"><span class="pl-pds">'</span>node_modules<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>bower_components<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>custom_components<span class="pl-pds">'</span></span>
+            <span class="pl-s"><span class="pl-pds">'</span>node_modules<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>bower_components<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>custom_components<span class="pl-pds">'</span></span>
         ]
     },
     plugins<span class="pl-k">:</span> [
@@ -79,38 +76,38 @@
 <span class="pl-sr">                <span class="pl-pds">/</span><span class="pl-c1">.</span><span class="pl-k">*</span><span class="pl-cce">\.</span>min<span class="pl-c1">.</span><span class="pl-k">*</span><span class="pl-pds">/</span></span>
             ]
         }),
-        <span class="pl-k">new</span> <span class="pl-en">ExtractTextPlugin</span>(<span class="pl-s1"><span class="pl-pds">'</span>[name].css<span class="pl-pds">'</span></span>),
-        <span class="pl-k">new</span> <span class="pl-en">webpack.optimize</span>.CommonsChunkPlugin(<span class="pl-s1"><span class="pl-pds">'</span>vendor<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>vendor.js<span class="pl-pds">'</span></span>)
+        <span class="pl-k">new</span> <span class="pl-en">ExtractTextPlugin</span>(<span class="pl-s"><span class="pl-pds">'</span>[name].css<span class="pl-pds">'</span></span>),
+        <span class="pl-k">new</span> <span class="pl-en">webpack.optimize</span>.CommonsChunkPlugin(<span class="pl-s"><span class="pl-pds">'</span>vendor<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>vendor.js<span class="pl-pds">'</span></span>)
     ],
     module<span class="pl-k">:</span> {
         loaders<span class="pl-k">:</span> [{
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>css<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
             exclude<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-c1">.</span><span class="pl-k">*</span><span class="pl-cce">\.</span>min<span class="pl-c1">.</span>css<span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> ExtractTextPlugin.extract(<span class="pl-s1"><span class="pl-pds">'</span>style-loader<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>css-loader<span class="pl-pds">'</span></span>)
+            loader<span class="pl-k">:</span> ExtractTextPlugin.extract(<span class="pl-s"><span class="pl-pds">'</span>style-loader<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>css-loader<span class="pl-pds">'</span></span>)
         }, {
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>less<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> ExtractTextPlugin.extract(<span class="pl-s1"><span class="pl-pds">'</span>style-loader<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>css-loader!less-loader<span class="pl-pds">'</span></span>)
+            loader<span class="pl-k">:</span> ExtractTextPlugin.extract(<span class="pl-s"><span class="pl-pds">'</span>style-loader<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>css-loader!less-loader<span class="pl-pds">'</span></span>)
         }, {
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>png<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>url-loader?prefix=img/&amp;limit=5000<span class="pl-pds">'</span></span>
+            loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>url-loader?prefix=img/&amp;limit=5000<span class="pl-pds">'</span></span>
         }, {
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>jpg<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>url-loader?prefix=img/&amp;limit=5000<span class="pl-pds">'</span></span>
+            loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>url-loader?prefix=img/&amp;limit=5000<span class="pl-pds">'</span></span>
         }, {
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>gif<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>url-loader?prefix=img/&amp;limit=5000<span class="pl-pds">'</span></span>
+            loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>url-loader?prefix=img/&amp;limit=5000<span class="pl-pds">'</span></span>
         }, {
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>woff<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>url-loader?prefix=font/&amp;limit=5000<span class="pl-pds">'</span></span>
+            loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>url-loader?prefix=font/&amp;limit=5000<span class="pl-pds">'</span></span>
         }, {
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>eot<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>file-loader?prefix=font/<span class="pl-pds">'</span></span>
+            loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>file-loader?prefix=font/<span class="pl-pds">'</span></span>
         }, {
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>ttf<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>file-loader?prefix=font/<span class="pl-pds">'</span></span>
+            loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>file-loader?prefix=font/<span class="pl-pds">'</span></span>
         }, {
             test<span class="pl-k">:</span><span class="pl-sr"> <span class="pl-pds">/</span><span class="pl-cce">\.</span>svg<span class="pl-k">$</span><span class="pl-pds">/</span></span>,
-            loader<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>file-loader?prefix=font/<span class="pl-pds">'</span></span>
+            loader<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>file-loader?prefix=font/<span class="pl-pds">'</span></span>
         }]
     }
 });
@@ -118,22 +115,22 @@
 
 <p><code>polyfills/webpack.config.js</code></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s1"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
 
-<span class="pl-s">var</span> WebpackConfig <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> webpackConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
 
-<span class="pl-sv">module</span>.exports <span class="pl-k">=</span> WebpackConfig.fromCwd().extend({
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> webpackConfig.fromCwd().extend({
     entry<span class="pl-k">:</span> {
         vendor<span class="pl-k">:</span> [
-            <span class="pl-s1"><span class="pl-pds">'</span>consolelog<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>es5-shim<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>es5-shim/es5-sham<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>es6-shim<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>es6-shim/es6-sham<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>json3<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>html5shiv<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>html5shiv/dist/html5shiv-printshiv.js<span class="pl-pds">'</span></span>,
-            <span class="pl-s1"><span class="pl-pds">'</span>respond<span class="pl-pds">'</span></span>
+            <span class="pl-s"><span class="pl-pds">'</span>consolelog<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>es5-shim<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>es5-shim/es5-sham<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>es6-shim<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>es6-shim/es6-sham<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>json3<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>html5shiv<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>html5shiv/dist/html5shiv-printshiv.js<span class="pl-pds">'</span></span>,
+            <span class="pl-s"><span class="pl-pds">'</span>respond<span class="pl-pds">'</span></span>
         ]
     }
 });
