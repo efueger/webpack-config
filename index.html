@@ -43,18 +43,19 @@
 <h2 id="sample">
 <a id="sample" class="anchor" href="#sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample</h2>
 
-<p><code>webpack.config.js</code></p>
+<p><code>docs/samples/webpack.config.js</code></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+<div class="highlight highlight-source-js"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
 
 <span class="pl-k">var</span> path <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>path<span class="pl-pds">'</span></span>),
     webpack <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack<span class="pl-pds">'</span></span>),
     BowerPlugin <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>bower-webpack-plugin<span class="pl-pds">'</span></span>),
     ExtractTextPlugin <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>extract-text-webpack-plugin<span class="pl-pds">'</span></span>),
     ComponentPlugin <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>component-webpack-plugin<span class="pl-pds">'</span></span>),
-    webpackConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
+    WebpackConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
 
-<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> webpackConfig.fromObject({
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">WebpackConfig</span>().merge({
+    filename<span class="pl-k">:</span> <span class="pl-c1">__filename</span>,
     output<span class="pl-k">:</span> {
         filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>[name].js<span class="pl-pds">'</span></span>
     },
@@ -113,13 +114,14 @@
 });
 </pre></div>
 
-<p><code>polyfills/webpack.config.js</code></p>
+<p><code>docs/samples/polyfills/webpack.config.js</code></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+<div class="highlight highlight-source-js"><pre><span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
 
-<span class="pl-k">var</span> webpackConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> WebpackConfig <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>webpack-config<span class="pl-pds">'</span></span>);
 
-<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> webpackConfig.fromCwd().extend({
+<span class="pl-c1">module</span>.exports <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">WebpackConfig</span>().extend(<span class="pl-s"><span class="pl-pds">'</span>../webpack.config.js<span class="pl-pds">'</span></span>).merge({
+    filename<span class="pl-k">:</span> <span class="pl-c1">__filename</span>,
     entry<span class="pl-k">:</span> {
         vendor<span class="pl-k">:</span> [
             <span class="pl-s"><span class="pl-pds">'</span>consolelog<span class="pl-pds">'</span></span>,
